@@ -5,6 +5,9 @@ Este projeto é uma API feita exclusivamente para o hospital Sabará, com o obje
 - Salas médicas
 E muito mais!
 
+## Video Sprint
+[Youtube](https://www.youtube.com/watch?v=_TzUiP4WutM)
+
 ## Equipe:
 
 - Pedro Henrique, 559443 - Desenvolvedor BackEnd
