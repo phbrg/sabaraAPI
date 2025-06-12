@@ -14,7 +14,9 @@ class Appointment(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     patient_id = Column(Integer, ForeignKey('patient.id'))
+    patient_name = Column(String, ForeignKey('patient.full_name'))
     medic_id = Column(Integer, ForeignKey('user.id'))
+    medic_name = Column(String, ForeignKey('user.name'))
     date = Column(DateTime)
     appointmentType = Column(Enum(AppointmentType))
     createdAt = Column(DateTime, default=datetime.utcnow)
