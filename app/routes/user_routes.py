@@ -11,7 +11,7 @@ router = APIRouter()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='/users/login')
 
 @router.post('/create', response_model=UserOut)
-def createUserRoute(userData: UserCreate, db: Session = Depends(getDb), user: dict = Depends(isAdmin)):
+def createUserRoute(userData: UserCreate, db: Session = Depends(getDb)):
     return createUser(userData, db)
 
 @router.post('/login')

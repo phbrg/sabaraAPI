@@ -11,7 +11,9 @@ def createAppointment(appointmentData: AppointmentCreate, db: Session):
 
     newAppointment = Appointment(
         patient_id=appointmentData.patient_id,
+        patient_name=appointmentData.patient_name,
         medic_id=appointmentData.medic_id,
+        medic_name=appointmentData.medic_name,
         date=appointmentDate,
         appointmentType=appointmentData.appointmentType
     )
@@ -35,7 +37,10 @@ def updateAppointment(appointmentId: int, appointmentData: AppointmentUpdate, db
         appointment.patient_id = appointmentData.patient_id
     if appointmentData.appointmentType is not None:
         appointment.appointmentType = appointmentData.appointmentType
-    
+    if appointmentData.medic_name is not None:
+        appointment.medic_name = appointmentData.medic_name
+    if appointmentData.patient_name is not None:
+        appointment.patient_name = appointmentData.patient_name
 
     db.commit()
     db.refresh(appointment)
@@ -51,13 +56,17 @@ def deleteAppointment(appointmentId: int, db: Session):
     db.commit()
     return {'message': 'Appointment deleted.'}
 
-def getAppointment(id: Optional[int], medic_id: Optional[str], patient_id: Optional[str], db: Session):
+def getAppointment(id: Optional[int], medic_id: Optional[int], medic_name: Optional[str], patient_id: Optional[int], patient_name: Optional[str], db: Session):
     query = db.query(Appointment)
     
     if id is not None:
       query = query.filter(Appointment.id == id)
     if medic_id is not None:
       query = query.filter(Appointment.medic_id == medic_id)
+    if medic_name is not None:
+      query = query.filter(Appointment.medic_name.ilike(f'%{medic_name}%'))
+    if patient_name is not None:
+      query = query.filter(Appointment.patient_name.ilike(f'%{patient_name}%'))
     if patient_id is not None:
       query = query.filter(Appointment.patient_id == patient_id)
     

@@ -23,5 +23,5 @@ def deleteAppointmentRoute(appointmentId: int, db: Session = Depends(getDb), use
     return deleteAppointment(appointmentId, db)
 
 @router.get('/', response_model=List[AppointmentOut])
-def getAppointmentRoute(id: Optional[int] = Query(default=None), medic_id: Optional[int] = Query(default=None), patient_id: Optional[int] = Query(default=None), db: Session = Depends(getDb), user: dict = Depends(getCurrentUser)):
-    return getAppointment(id, medic_id, patient_id, db)
+def getAppointmentRoute(id: Optional[int] = Query(default=None), medic_id: Optional[int] = Query(default=None), medic_name: Optional[str] = Query(default=None), patient_id: Optional[int] = Query(default=None), patient_name: Optional[str] = Query(default=None), db: Session = Depends(getDb), user: dict = Depends(getCurrentUser)):
+    return getAppointment(id, medic_id, medic_name, patient_id, patient_name, db)
