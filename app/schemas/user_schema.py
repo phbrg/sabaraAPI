@@ -1,6 +1,7 @@
 from pydantic import BaseModel, EmailStr
 from enum import Enum
 from typing import Optional
+from datetime import datetime
 from app.models.user_model import RoleEnum
 
 class UserCreate(BaseModel):
@@ -14,6 +15,7 @@ class UserOut(BaseModel):
     name: str
     email: EmailStr
     role: RoleEnum
+    createdAt: datetime
 
     class Config:
         orm_mode = True

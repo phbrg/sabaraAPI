@@ -6,8 +6,8 @@ class PatientCreate(BaseModel):
     full_name: str
     birth_date: str
     cpf: str
-    phone: Optional[str] = None
-    email: Optional[EmailStr] = None
+    phone: str
+    email: EmailStr
     allergies: Optional[List[str]] = None
     notes: Optional[List[str]] = None
 
@@ -16,10 +16,11 @@ class PatientOut(BaseModel):
     full_name: str
     birth_date: datetime
     cpf: str
-    phone: Optional[str]
-    email: Optional[EmailStr]
+    phone: str
+    email: EmailStr
     allergies: Optional[List[str]]
     notes: Optional[List[str]]
+    createdAt: datetime
 
     class Config:
         orm_mode = True

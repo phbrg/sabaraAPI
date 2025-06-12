@@ -19,6 +19,7 @@ class AppointmentOut(BaseModel):
     medic_name: str
     date: datetime
     appointmentType: AppointmentType
+    createdAt: datetime
 
     class Config:
         orm_mode = True
