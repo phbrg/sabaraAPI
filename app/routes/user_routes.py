@@ -23,7 +23,7 @@ def getMeRoute(db: Session = Depends(getDb), user: dict = Depends(getCurrentUser
     return meUser(user, db)
 
 @router.put('/update/{userId}', response_model=UserOut)
-def updateUser(userId: int, userData: UserUpdate, db: Session = Depends(getDb), user: dict = Depends(getCurrentUser)):
+def updateUserRoute(userId: int, userData: UserUpdate, db: Session = Depends(getDb), user: dict = Depends(getCurrentUser)):
     return updateUser(userId, userData, db)
 
 @router.delete('/delete/{userId}')

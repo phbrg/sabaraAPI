@@ -43,6 +43,10 @@ def updateUser(userId: int, userData: UserUpdate, db: Session):
     if userData.name is not None:
         user.name = userData.name
     if userData.email is not None:
+        getUser = db.query(User).filter(User.email == userData.email).first()
+        if getUser:
+            raise HTTPException(status_code=400, detail='Email already registered')
+            
         user.email = userData.email
     if userData.password is not None:
         user.password = hashPassword(userData.password)

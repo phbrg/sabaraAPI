@@ -15,8 +15,8 @@ def createPatientRoute(patientData: PatientCreate, db: Session = Depends(getDb),
     return createPatient(patientData, db)
 
 @router.put('/update/{patientId}', response_model=PatientOut)
-def updatePatientRoute(patientId: int, userData: PatientUpdate, db: Session = Depends(getDb), user: dict = Depends(getCurrentUser)):
-    return updatePatient(patientId, userData, db)
+def updatePatientRoute(patientId: int, patientData: PatientUpdate, db: Session = Depends(getDb), user: dict = Depends(getCurrentUser)):
+    return updatePatient(patientId, patientData, db)
 
 @router.delete('/delete/{patientId}')
 def deletePatientRoute(patientId: int, db: Session = Depends(getDb), user: dict = Depends(isAdmin)):

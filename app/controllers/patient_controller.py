@@ -1,11 +1,12 @@
 from sqlalchemy.orm import Session
+from sqlalchemy import or_
 from fastapi import HTTPException, status, Query
 from typing import Optional
 from app.models.patient_model import Patient
 from app.schemas.patient_schema import PatientCreate, PatientUpdate
 
 def createPatient(patientData: PatientCreate, db: Session):
-    getPatient = db.query(Patient).filter(Patient.cpf == patientData.cpf or Patient.email == patientData.email or Patient.phone == patientData.phone).first()
+    getPatient = db.query(Patient).filter(or_(Patient.cpf == patientData.cpf, Patient.email == patientData.email, Patient.phone == patientData.phone)).first()
     if getPatient:
         raise HTTPException(status_code=400, detail='Patient alredy registered.')
 
@@ -31,18 +32,25 @@ def updatePatient(patientId: int, patientData: PatientUpdate, db: Session):
 
     if patientData.full_name is not None:
         patient.full_name = patientData.full_name
-    if patientData.birth_date is not None:
-        patient.birth_date = patientData.birth_date
-    if patientData.cpf is not None:
-        patient.cpf = patientData.cpf
-    if patientData.phone is not None:
-        patient.phone = patientData.phone
     if patientData.email is not None:
+        getPatient = db.query(Patient).filter(Patient.email == patientData.email).first()
+        if getPatient:
+            raise HTTPException(status_code=400, detail='Email already registered')
+            
         patient.email = patientData.email
-    if patientData.allergies is not None:
-        patient.allergies = patientData.allergies
-    if patientData.notes is not None:
-        patient.notes = patientData.notes
+    if patientData.phone is not None:
+        getPatient = db.query(Patient).filter(Patient.phone == patientData.phone).first()
+        if getPatient:
+            raise HTTPException(status_code=400, detail='Phone already registered')
+            
+        patient.phone = patientData.phone
+    if patientData.cpf is not None:
+        getPatient = db.query(Patient).filter(Patient.cpf == patientData.cpf).first()
+        if getPatient:
+            raise HTTPException(status_code=400, detail='Cpf already registered')
+            
+        patient.cpf = patientData.cpf
+    
 
     db.commit()
     db.refresh(patient)
