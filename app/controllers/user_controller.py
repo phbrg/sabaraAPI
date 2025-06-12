@@ -63,14 +63,14 @@ def deleteUser(userId: int, db: Session):
     db.commit()
     return {'message': 'User deleted.'}
 
-def getUsers(id: Optional[int], name: Optional[str], email: Optional[str], db: Session):
+def getUser(id: Optional[int], name: Optional[str], email: Optional[str], db: Session):
     query = db.query(User)
     
+    if id is not None:
+        query = query.filter(User.id == id)
     if name is not None:
         query = query.filter(User.name.ilike(f'%{name}%'))
     if email is not None:
         query = query.filter(User.email == email)
-    if id is not None:
-        query = query.filter(User.id == id)
     
     return query.all()

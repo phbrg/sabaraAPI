@@ -1,25 +1,34 @@
 from pydantic import BaseModel, EmailStr
 from datetime import date
-from typing import Optional
+from typing import Optional, List
 
 class PatientCreate(BaseModel):
     full_name: str
-    birth_date: date
+    birth_date: str
     cpf: str
     phone: Optional[str] = None
     email: Optional[EmailStr] = None
-    allergies: Optional[str] = None
-    notes: Optional[str] = None
+    allergies: Optional[List[str]] = None
+    notes: Optional[List[str]] = None
 
 class PatientOut(BaseModel):
     id: int
     full_name: str
-    birth_date: date
+    birth_date: str
     cpf: str
     phone: Optional[str]
     email: Optional[EmailStr]
-    allergies: Optional[str]
-    notes: Optional[str]
+    allergies: Optional[List[str]]
+    notes: Optional[List[str]]
 
     class Config:
         orm_mode = True
+
+class PatientUpdate(BaseModel):
+    full_name: Optional[str] = None
+    birth_date: Optional[str] = None
+    cpf: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[EmailStr] = None
+    allergies: Optional[List[str]] = None
+    notes: Optional[List[str]] = None
