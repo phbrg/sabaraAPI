@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import or_
 from fastapi import HTTPException, status, Query
 from typing import Optional
+from datetime import datetime
 from app.models.patient_model import Patient
 from app.schemas.patient_schema import PatientCreate, PatientUpdate
 
@@ -10,9 +11,11 @@ def createPatient(patientData: PatientCreate, db: Session):
     if getPatient:
         raise HTTPException(status_code=400, detail='Patient alredy registered.')
 
+    birthDate = datetime.strptime(patientData.birth_date, "%d-%m-%Y")
+
     newPatient = Patient(
         full_name=patientData.full_name,
-        birth_date=patientData.birth_date,
+        birth_date=birthDate,
         cpf=patientData.cpf,
         phone=patientData.phone,
         email=patientData.email,
@@ -50,6 +53,14 @@ def updatePatient(patientId: int, patientData: PatientUpdate, db: Session):
             raise HTTPException(status_code=400, detail='Cpf already registered')
             
         patient.cpf = patientData.cpf
+    if patientData.birth_date is not None:
+        birthDate = datetime.strptime(patientData.birth_date, "%d-%m-%Y")
+
+        patient.birth_date = birthDate
+    if patientData.notes is not None:
+        patient.notes = patientData.notes
+    if patientData.allergies is not None:
+        patient.allergies = patientData.allergies
     
 
     db.commit()

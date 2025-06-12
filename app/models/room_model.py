@@ -9,4 +9,4 @@ class Room(Base):
     temperature = Column(Float)
     humidity = Column(Float)
     luminosity = Column(Float)
-    date = Column(DateTime, default=datetime.utcnow)
+    createdAt = Column(DateTime, default=datetime.utcnow)

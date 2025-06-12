@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-from datetime import date
+from datetime import datetime
 from typing import Optional, List
 
 class PatientCreate(BaseModel):
@@ -14,7 +14,7 @@ class PatientCreate(BaseModel):
 class PatientOut(BaseModel):
     id: int
     full_name: str
-    birth_date: str
+    birth_date: datetime
     cpf: str
     phone: Optional[str]
     email: Optional[EmailStr]

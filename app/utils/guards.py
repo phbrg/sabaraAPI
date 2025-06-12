@@ -21,7 +21,6 @@ def getCurrentUser(token: str = Depends(oauth2_scheme)) -> dict:
 
 def isAdmin(token: str = Depends(oauth2_scheme)) -> bool:
     user = getCurrentUser(token)
-    
     if user['role'] == 'RoleEnum.ADMIN':
         return user
     
