@@ -3,7 +3,7 @@ from app.db.connection import Base
 from datetime import datetime
 
 class Room(Base):
-    __tablename__ = "room"
+    __tablename__ = 'room'
 
     id = Column(Integer, primary_key=True, index=True)
     temperature = Column(Float)

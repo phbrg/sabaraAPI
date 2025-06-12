@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from dotenv import load_dotenv
 import os
 
-def get_db():
+def getDb():
     db = SessionLocal()
     try:
         yield db

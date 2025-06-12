@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Date
 from app.db.connection import Base
 
 class Patient(Base):
-    __tablename__ = "patient"
+    __tablename__ = 'patient'
 
     id = Column(Integer, primary_key=True, index=True)
     full_name = Column(String, nullable=False)
