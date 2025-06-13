@@ -484,3 +484,30 @@ Response:
   ]
 ```
 > OBS: Todos dados são ficticios
+
+### Arduino (Room)
+
+#### Get Prontuario(s)
+Route: `/room/{{?param=value}}`
+
+Method: `GET`
+
+Params:
+- `id`
+- `temperature`
+- `humidity`
+- `light`
+Response:
+```json
+  [
+    {
+      "id": 1,
+      "temperature": 32.6,
+      "humidity": 62.5,
+      "light": 54.5,
+      "createdAt": "2000-00-00T00:00:00.0000"
+    },
+    ...
+  ]
+```
+> OBS: Todos dados são ficticios
