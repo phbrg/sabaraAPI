@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 import requests
 
-API_URL = 'http://localhost:8000/room/create'
+API_URL = 'http://127.0.0.1:8000/room/create'
 
 sensor_data = {
     'temperature': None,
@@ -44,8 +44,8 @@ def onMessage(client, userdata, msg):
             print(f'Invalid value received: {key}: {payload}')
 
 client = mqtt.Client()
-client.onConnect = onConnect
-client.onMessage = onMessage
+client.on_connect = onConnect
+client.on_message = onMessage
 
 client.connect('broker.hivemq.com', 1883, 60)
 
