@@ -64,7 +64,9 @@ O projeto atualmente conta com diversas rotas dinamicas (listadas abaixo) que bu
 
 #### Create User
 Route: `/user/create/`
+
 Method: `POST`
+
 Body:
 ```json
   {
@@ -88,7 +90,9 @@ Response:
 
 #### Login
 Route: `/user/login/`
+
 Method: `POST`
+
 Body:
 ```json
   {
@@ -106,7 +110,9 @@ Response:
 
 #### Me
 Route: `/user/me/`
+
 Method: `GET`
+
 Response:
 ```json
   {
@@ -118,7 +124,9 @@ Response:
 
 #### Update user
 Route: `/user/update/{{ID}}`
+
 Method: `PUT`
+
 Body:
 ```json
   {
@@ -140,7 +148,9 @@ Response:
 
 #### Delete User
 Route: `/user/delete/{{ID}}`
+
 Method: `DELETE`
+
 Response:
 ```json
   { 
@@ -150,7 +160,9 @@ Response:
 
 #### Get User(s)
 Route: `/user/{{?param=value}}`
+
 Method: `GET`
+
 Params:
 - `id`
 - `name`
@@ -174,7 +186,9 @@ Response:
 
 #### Create Patient
 Route: `/patient/create/`
+
 Method: `POST`
+
 Body:
 ```json
 {
@@ -205,7 +219,9 @@ Response:
 
 #### Update Patient
 Route: `/patient/update/{{ID}}`
+
 Method: `PUT`
+
 Body:
 ```json
   {
@@ -231,7 +247,9 @@ Response:
 
 #### Delete Patient
 Route: `/patient/delete/{{ID}}`
+
 Method: `DELETE`
+
 Response:
 ```json
   { 
@@ -241,7 +259,9 @@ Response:
 
 #### Get Patient(s)
 Route: `/patient/{{?param=value}}`
+
 Method: `GET`
+
 Params:
 - `id`
 - `full_name`
@@ -271,7 +291,9 @@ Response:
 
 #### Create Appointment
 Route: `/appointment/create/`
+
 Method: `POST`
+
 Body:
 ```json
   {
@@ -300,7 +322,9 @@ Response:
 
 #### Update Appointment
 Route: `/appointment/update/{{ID}}`
+
 Method: `PUT`
+
 Body:
 ```json
   {
@@ -325,7 +349,9 @@ Response:
 
 #### Delete Appointment
 Route: `/appointment/delete/{{ID}}`
+
 Method: `DELETE`
+
 Response:
 ```json
   { 
@@ -335,7 +361,9 @@ Response:
 
 #### Get Appointment(s)
 Route: `/appointment/{{?param=value}}`
+
 Method: `GET`
+
 Params:
 - `id`
 - `patient_id`
@@ -364,7 +392,9 @@ Response:
 
 #### Create Prontuario
 Route: `/prontuario/create/`
+
 Method: `POST`
+
 Body:
 ```json
   {
@@ -391,7 +421,9 @@ Response:
 
 #### Update Prontuario
 Route: `/prontuario/update/{{ID}}`
+
 Method: `PUT`
+
 Body:
 ```json
   {
@@ -415,7 +447,9 @@ Response:
 
 #### Delete Prontuario
 Route: `/prontuario/delete/{{ID}}`
+
 Method: `DELETE`
+
 Response:
 ```json
   { 
@@ -425,7 +459,9 @@ Response:
 
 #### Get Prontuario(s)
 Route: `/prontuario/{{?param=value}}`
+
 Method: `GET`
+
 Params:
 - `id`
 - `patient_id`
