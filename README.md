@@ -6,7 +6,7 @@ Este projeto é uma API feita exclusivamente para o hospital Sabará, com o obje
 E muito mais!
 
 ## Video Sprint
-> Em desenvolvimento...
+[YouTube](https://youtu.be/UF8jq0Fd3Hc)
 
 ## Equipe:
 
