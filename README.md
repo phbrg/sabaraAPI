@@ -9,8 +9,8 @@ E muito mais!
 [Youtube](https://www.youtube.com/watch?v=KSgO-H33UWU)
 
 ## Diagrama
-![IMG](https://media.discordapp.net/attachments/1363227604353810525/1366941812324962304/image.png?ex=6812c744&is=681175c4&hm=0ba6e6d45820ed0d9892c73ba1b80401edf285b0925dc79f01eb5092c1626f2c&=&format=webp&quality=lossless&width=936&height=312)<br/>
-[Download](https://cdn.discordapp.com/attachments/1363227604353810525/1366941644192223282/DiagramaSabara.drawio?ex=6812c71c&is=6811759c&hm=ab60c1b56baf5729d221789df708731446b5721583ee881192120bbd6a262a06&)
+![IMG](https://media.discordapp.net/attachments/1363230508095639632/1383238613340524601/image.png?ex=684e10d8&is=684cbf58&hm=793e11b536f07a13dfb2d43ce792ed2660c1fcfeca00a545fb553896aa830867&=&format=webp&quality=lossless&width=1270&height=229)<br/>
+[Download](https://cdn.discordapp.com/attachments/1363230508095639632/1383238637881262151/sprint4.drawio?ex=684e10de&is=684cbf5e&hm=40c5685f5769f87469c001ecf13ce6d77f0374bc693b5a2d5ffce506887a81f7&)
 
 ## Equipe:
 
@@ -21,4 +21,5 @@ E muito mais!
 
 ## Circuito
 
-![IMG](https://cdn.discordapp.com/attachments/1363227604353810525/1366928839065862194/image.png?ex=6812bb2f&is=681169af&hm=8b2b7ecea168584853785ee4478fce6e08317d3b4ea7616c3d340e4f05b7f567&)
+![IMG](https://cdn.discordapp.com/attachments/1363230508095639632/1383241785782046810/image.png?ex=684e13cd&is=684cc24d&hm=ba090845157174d4be193cbd2db2efc00a5115dc2fde71512b89a90954cbecbb&)
+[WokiWi](https://wokwi.com/projects/433609174072571905)
