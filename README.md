@@ -5,6 +5,18 @@ Este projeto é uma API feita exclusivamente para o hospital Sabará, com o obje
 - Salas médicas
 E muito mais!
 
+## Como rodar
+1. Acesse o [WokiWi](https://wokwi.com/projects/433609174072571905) e rode o projeto.
+2. Baixe o [Mqtt_listener.py](./mqtt_listener.py)
+3. Instale o modulo `requests` e `paho-mqtt` com:
+```json
+pip install requests paho-mqtt
+```
+4. Rode o arquivo com:
+```json
+python mqtt_listener.py
+```
+
 ## Video Sprint
 [Youtube](https://youtu.be/LhCzJ0r9t2Y)
 
