@@ -27,8 +27,7 @@ python mqtt_listener.py
 ## Equipe:
 
 - Pedro Henrique, 559443 - Desenvolvedor BackEnd
-- Evandro Kaibara, 559274 - Reponsavel pelo FrontEnd
-- Ícaro de Oliveira, 559950 - Ideias e ajuda
+- Evandro Kaibara, 559274 - Desenvolvedor FrontEnd
 - Mateus Mallet, 560491 - Ideias e ajuda
 
 ## Circuito
